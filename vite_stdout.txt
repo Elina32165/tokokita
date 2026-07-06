@@ -1,0 +1,39 @@
+
+> dev
+> vite
+
+
+  [32m[1mVITE[22m v7.3.6[39m  [2mready in [0m[1m1462[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+
+  [31m[1mLARAVEL[22m v12.53.0[39m  [2mplugin[22m [1mv2.1.0[22m
+
+  [32m➜[39m  [1mAPP_URL[22m: [36mhttp://localhost[39m
+[2m01.32.30[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\layout\app.blade.php[22m
+[2m01.41.45[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mroutes\api.php[22m
+[2m01.42.25[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mroutes\api.php[22m
+[2m02.07.16[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\produk\create.blade.php[22m
+[2m02.07.21[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\produk\edit.blade.php[22m
+[2m02.08.40[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mvendor/composer/06efdc11/dompdf-dompdf-f11ead2/lib/fonts/mustRead.html[22m
+[2m02.08.41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mvendor/dompdf/dompdf/lib/fonts/mustRead.html[22m
+[2m02.08.43[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mvendor/composer/06efdc11/dompdf-dompdf-f11ead2/lib/fonts/mustRead.html[22m
+[2m02.11.55[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mroutes\web.php[22m
+[2m02.12.03[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\produk\pdf.blade.php[22m
+[2m02.12.18[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\produk\index.blade.php[22m
+[2m02.18.29[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\pesanan\create.blade.php[22m
+[2m02.18.32[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\pesanan\index.blade.php[22m
+[2m02.18.36[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\pesanan\admin.blade.php[22m
+[2m02.18.37[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mroutes\web.php[22m
+[2m02.18.39[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mroutes\web.php[22m
+[2m02.18.40[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\layout\app.blade.php[22m
+[2m02.21.20[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\pesanan\create.blade.php[22m
+[2m02.21.21[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\pesanan\index.blade.php[22m
+[2m02.21.21[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\pesanan\admin.blade.php[22m
+[2m02.38.30[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\tentang.blade.php[22m
+[2m02.39.55[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\tentang.blade.php[22m
+[2m02.40.58[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\tentang.blade.php[22m
+[2m02.41.39[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\tentang.blade.php[22m
+[2m02.44.37[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\layout\app.blade.php[22m
+[2m02.44.46[22m [36m[1m[vite][22m[39m [32mfull reload[39m [2mresources\views\layout\app.blade.php[22m

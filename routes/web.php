@@ -7,6 +7,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PesananController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,29 +41,20 @@ Route::get('/', function () {
     Route::get('/buku/kategori/{genre}', [BukuController::class, 'kategori']);
 
     
-    Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');
-    Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create');
-    Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store');
-
     Route::get('/tentang', [TentangController::class, 'index']);
 
-    Route::get('/produk/{id}/edit',[ProdukController::class, 'edit']);
-    Route::put('/produk/{id}',[ProdukController::class, 'update']);
-    Route::delete('/produk/{id}', [ProdukController::class, 'destroy']);
-
     // RUTE PUBLIK (Bisa diakses siapa saja tanpa login) 
-     Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index'); 
+    Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index'); 
   
-    // RUTE TERPROTEKSI (Wajib Login) 
-    // Kita kelompokkan ke dalam Route::middleware('auth')>group(...) 
-     Route::middleware('auth')->group(function () { 
-     Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create'); 
-     Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store'); 
-      
-     Route::get('/produk/{id}/edit', [ProdukController::class, 'edit']); 
-     Route::put('/produk/{id}', [ProdukController::class, 'update']); 
-     Route::delete('/produk/{id}', [ProdukController::class, 'destroy']); 
- });
+    // RUTE KHUSUS ADMIN (Wajib Login + Role Admin)
+    Route::middleware(['auth', 'role:admin'])->group(function () { 
+        Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create'); 
+        Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store'); 
+        Route::get('/produk/{id}/edit', [ProdukController::class, 'edit']); 
+        Route::put('/produk/{id}', [ProdukController::class, 'update']); 
+        Route::delete('/produk/{id}', [ProdukController::class, 'destroy']); 
+        Route::get('/produk/cetak-pdf', [ProdukController::class, 'cetakPdf']); 
+    });
 
     // Rute untuk tamu (Guest)
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -71,4 +63,15 @@ Route::get('/', function () {
     // Rute logout harus menggunakan POST demi keamanan (mencegah CSRF Logout)
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Rute untuk Pelanggan (Customer)
+Route::middleware('auth')->group(function () {
+    Route::get('/pesanan', [PesananController::class, 'index']);
+    Route::get('/pesanan/create', [PesananController::class, 'create']);
+    Route::post('/pesanan', [PesananController::class, 'store']);
+});
 
+// Rute khusus untuk Administrator
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/pesanan', [PesananController::class, 'adminIndex']);
+    Route::put('/admin/pesanan/{id}', [PesananController::class, 'updateStatus']);
+});

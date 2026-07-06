@@ -4,8 +4,7 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>@yield('title') - TokoKita</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head> 
 <body class="bg-light"> 
       
@@ -24,6 +23,16 @@
                     <li class="nav-item"> 
                         <a class="nav-link" href="/tentang">Tentang</a> 
                     </li> 
+                    @auth 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="/pesanan">Pesanan Saya</a> 
+                    </li> 
+                    @can('isAdmin') 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="/admin/pesanan">Kelola Pesanan</a> 
+                    </li> 
+                    @endcan 
+                    @endauth 
                 </ul> 
                 
                 <ul class="navbar-nav ms-auto align-items-lg-center"> 
@@ -34,10 +43,23 @@
                             </a> 
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
                                 <li> 
+                                    <a class="dropdown-item" href="/tentang"> 
+                                        <i class="bi bi-info-circle me-2"></i>Tentang 
+                                    </a> 
+                                </li> 
+                                @can('isAdmin') 
+                                <li> 
+                                    <a class="dropdown-item" href="/admin/pesanan"> 
+                                        <i class="bi bi-clipboard-data me-2"></i>Kelola Pesanan 
+                                    </a> 
+                                </li> 
+                                @endcan 
+                                <li><hr class="dropdown-divider"></li> 
+                                <li> 
                                     <form action="/logout" method="POST" class="m-0"> 
                                         @csrf 
-                                        <button type="submit" class="dropdown-item text-danger">
-                                            <i class="bi bi-box-arrow-right me-2"></i>Logout
+                                        <button type="submit" class="dropdown-item text-danger"> 
+                                            <i class="bi bi-box-arrow-right me-2"></i>Logout 
                                         </button> 
                                     </form> 
                                 </li> 
@@ -70,6 +92,6 @@
         &copy; {{ date('Y') }} TokoKita. Hak Cipta Dilindungi. 
     </footer> 
   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <!-- Semua script sudah dibundel oleh Vite -->
 </body> 
 </html>
